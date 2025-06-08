@@ -4,7 +4,7 @@ import EnhancedCard from '../components/ui/enhanced-card';
 import FloatingInput from '../components/ui/FloatingInput';
 import FloatingTextarea from '../components/ui/FloatingTextarea';
 import PageWrapper from '../components/ui/PageWrapper';
-import { useToast } from '../components/ui/Toast';
+import { useToast } from '../components/ui/ToastProvider';
 import { motion } from 'framer-motion';
 
 const Contact = () => {
