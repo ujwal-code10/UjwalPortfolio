@@ -147,47 +147,50 @@ const Projects = () => {
                         alt={project.title}
                         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex gap-2">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                        <div className="transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 flex gap-4">
                           <EnhancedButton
                             href={project.demoLink}
-                            size="sm"
-                            className="bg-white text-slate-900 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+                            size="lg"
+                            className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
                           >
-                            Demo
+                            Live Demo
                           </EnhancedButton>
                           <EnhancedButton
                             href={project.githubLink}
                             variant="outline"
-                            size="sm"
-                            className="bg-white border-white text-slate-900 hover:bg-slate-100 dark:bg-slate-800 dark:border-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+                            size="lg"
+                            className="bg-white/10 backdrop-blur-sm border-2 border-white hover:bg-white/20 text-white font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
                           >
-                            Code
+                            View Code
                           </EnhancedButton>
                         </div>
                       </div>
                     </div>
                     
-                    <div className="p-6">
-                      <div className="flex justify-between items-start mb-2">
-                        <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">
+                    <div className="p-6 bg-gradient-to-b from-white to-slate-50 dark:from-slate-800 dark:to-slate-900">
+                      <div className="flex flex-col sm:flex-row justify-between items-start gap-2 mb-4">
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                           {project.title}
                         </h3>
-                        <span className="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs rounded-full dark:bg-indigo-500 dark:text-indigo-100">
+                        <span className="px-3 py-1 bg-indigo-100 text-indigo-700 text-sm font-medium rounded-full dark:bg-indigo-500/20 dark:text-indigo-300 whitespace-nowrap">
                           {project.category}
                         </span>
                       </div>
                       
-                      <p className="text-slate-600 dark:text-slate-400 mb-4">
+                      <p className="text-slate-600 dark:text-slate-400 mb-6 min-h-[3rem]">
                         {project.description}
                       </p>
                       
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 pt-4 border-t border-slate-200 dark:border-slate-700/50">
                         {project.tools.map((tool, toolIndex) => (
                           <span
                             key={toolIndex}
-                            className="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs rounded"
+                            className="px-3 py-1 bg-gradient-to-r from-indigo-500/10 via-indigo-500/5 to-indigo-500/10 dark:from-indigo-400/20 dark:via-indigo-400/10 dark:to-indigo-400/20 text-indigo-700 dark:text-indigo-300 text-sm rounded-lg font-medium inline-flex items-center gap-1.5 transform transition-all duration-200 hover:scale-105 hover:shadow-md hover:bg-indigo-500/20 dark:hover:bg-indigo-400/30"
                           >
+                            <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 8 8">
+                              <circle cx="4" cy="4" r="3"/>
+                            </svg>
                             {tool}
                           </span>
                         ))}

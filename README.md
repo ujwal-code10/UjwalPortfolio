@@ -1,73 +1,142 @@
-# Welcome to your Lovable project
+# Ujwal's Portfolio Website
 
-## Project info
+A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. This website showcases my projects, skills, and professional experience with a focus on clean design and smooth user experience.
 
-**URL**: https://lovable.dev/projects/711a5faa-0e04-48a3-8202-9a52ec376350
+![Portfolio Preview](public/preview.png)
 
-## How can I edit this code?
+## 🌟 Features
 
-There are several ways of editing your application.
+- **Responsive Design**: Fully responsive layout that works beautifully on all devices
+- **Dark Mode**: Elegant dark mode implementation with smooth transitions
+- **Project Showcase**: Interactive project cards with live demos and source code links
+- **Modern UI**: Clean and professional design with subtle animations
+- **Performance Optimized**: Fast loading times and smooth interactions
+- **Accessibility**: WCAG compliant with proper semantic HTML and ARIA attributes
 
-**Use Lovable**
+## 🛠️ Built With
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/711a5faa-0e04-48a3-8202-9a52ec376350) and start prompting.
+- **Frontend Framework**: React 18 with TypeScript
+- **Styling**: Tailwind CSS with custom configurations
+- **Animations**: Framer Motion
+- **State Management**: React Context
+- **Routing**: React Router v6
+- **Code Quality**: ESLint & Prettier
+- **Build Tool**: Vite
+- **Deployment**: Vercel
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 Quick Start
 
-**Use your preferred IDE**
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ujwal/portfolio.git
+   cd portfolio
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-Follow these steps:
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 📂 Project Structure
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/        # Reusable UI components
+├── pages/            # Page components
+├── layouts/          # Layout components
+├── hooks/            # Custom React hooks
+├── context/          # React context providers
+├── styles/           # Global styles and Tailwind config
+├── types/            # TypeScript type definitions
+└── utils/            # Utility functions
 ```
 
-**Edit a file directly in GitHub**
+## 🎯 Key Features Explained
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Project Showcase
+- Filter projects by category
+- Interactive project cards with hover effects
+- Live demo and source code links
+- Detailed project information
+- Tech stack tags
 
-**Use GitHub Codespaces**
+### Responsive Design
+- Mobile-first approach
+- Breakpoint-specific layouts
+- Touch-friendly interactions
+- Optimized images
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Performance
+- Code splitting and lazy loading
+- Image optimization
+- Minimal dependencies
+- Efficient re-renders
 
-## What technologies are used for this project?
+## 🔧 Configuration
 
-This project is built with:
+### Environment Variables
+Create a `.env` file in the root directory:
+```env
+VITE_APP_TITLE=Ujwal's Portfolio
+VITE_CONTACT_EMAIL=your-email@example.com
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Tailwind Configuration
+Customize the theme in `tailwind.config.js`:
+```js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: {...},
+        secondary: {...}
+      }
+    }
+  }
+}
+```
 
-## How can I deploy this project?
+## 📱 Mobile Responsiveness
 
-Simply open [Lovable](https://lovable.dev/projects/711a5faa-0e04-48a3-8202-9a52ec376350) and click on Share -> Publish.
+The website is fully responsive with breakpoints at:
+- **sm**: 640px
+- **md**: 768px
+- **lg**: 1024px
+- **xl**: 1280px
+- **2xl**: 1536px
 
-## Can I connect a custom domain to my Lovable project?
+## 🤝 Contributing
 
-Yes, you can!
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📄 License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Contact
+
+Ujwal - [@ujwal_twitter](https://twitter.com/ujwal_twitter)
+
+Project Link: [https://github.com/ujwal/portfolio](https://github.com/ujwal/portfolio)
+
+## 🙏 Acknowledgments
+
+- [React Documentation](https://react.dev)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Framer Motion](https://www.framer.com/motion)
+- [Heroicons](https://heroicons.com)
+- [Unsplash](https://unsplash.com) for images
