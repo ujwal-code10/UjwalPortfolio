@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Card from '../components/Card';
 import Button from '../components/Button';
@@ -8,6 +7,7 @@ const Services = () => {
     {
       icon: '🛠️',
       title: 'Landing Pages',
+      price: '$50',
       description: 'High-converting single-page sites with smooth scroll, clean CTA, and responsive layout. Ideal for SaaS, personal brands, or products.',
       deliveryTime: '3-5 days',
       tools: ['React', 'Tailwind CSS', 'Framer Motion'],
@@ -16,6 +16,7 @@ const Services = () => {
     {
       icon: '🌐',
       title: 'Multi-Page Websites',
+      price: '$120',
       description: 'Complete sites with 3–5 pages (e.g., Home, About, Services, Projects, Contact). Designed for small businesses or creators.',
       deliveryTime: '1-2 weeks',
       tools: ['React', 'React Router', 'Tailwind CSS'],
@@ -24,6 +25,7 @@ const Services = () => {
     {
       icon: '🎨',
       title: 'Portfolio Sites',
+      price: '$80',
       description: 'Personal websites for developers, designers, or freelancers. Showcases projects, skills, and contact info.',
       deliveryTime: '4-7 days',
       tools: ['React', 'Tailwind CSS', 'React Router'],
@@ -32,6 +34,7 @@ const Services = () => {
     {
       icon: '📊',
       title: 'Admin Dashboards',
+      price: '$150',
       description: 'Dashboard UIs with reusable components (sidebar, cards, tables, charts). Built with Tailwind and React.',
       deliveryTime: '2-3 weeks',
       tools: ['React', 'Tailwind CSS', 'Chart.js', 'React Query'],
@@ -40,6 +43,7 @@ const Services = () => {
     {
       icon: '🧠',
       title: 'UI/UX Design',
+      price: '$40',
       description: 'Clean wireframes and visual layouts using Figma. You can request design + build together or code from existing mockups.',
       deliveryTime: '2-4 days',
       tools: ['Figma', 'Adobe XD', 'Sketch'],
@@ -66,11 +70,16 @@ const Services = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} hover className="p-6 h-full flex flex-col">
+              <Card key={index} hover className="rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                 <div className="text-3xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">
-                  {service.title}
-                </h3>
+                <div className="flex justify-between items-center mb-3">
+                  <h3 className="text-xl font-semibold text-gray-800">
+                    {service.title}
+                  </h3>
+                  <span className="text-indigo-600 font-bold text-lg">
+                    {service.price}
+                  </span>
+                </div>
                 <p className="text-slate-600 mb-4 flex-grow">
                   {service.description}
                 </p>

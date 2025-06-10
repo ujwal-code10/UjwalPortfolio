@@ -65,16 +65,24 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      addToast({
-        title: 'Message sent successfully!',
-        description: 'Thanks for reaching out. I\'ll get back to you within 24 hours.',
-        variant: 'success'
+      const response = await fetch('https://formspree.io/f/mbjwkzrk', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
       });
-      
-      setFormData({ name: '', email: '', message: '' });
+
+      if (response.ok) {
+        addToast({
+          title: 'Message sent successfully!',
+          description: 'Thanks for reaching out. I\'ll get back to you within 24 hours.',
+          variant: 'success'
+        });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        throw new Error('Failed to send message');
+      }
     } catch (error) {
       addToast({
         title: 'Error sending message',
@@ -123,9 +131,11 @@ const Contact = () => {
                   Send a Message
                 </h2>
                 
-                <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+                <form onSubmit={handleSubmit} action="https://formspree.io/f/mbjwkzrk" method="POST" className="space-y-6" noValidate>
                   <FloatingInput
                     id="name"
+                    name="name"
+                    type="text"
                     label="Full Name"
                     value={formData.name}
                     onChange={handleChange}
@@ -136,6 +146,7 @@ const Contact = () => {
                   
                   <FloatingInput
                     id="email"
+                    name="email"
                     label="Email Address"
                     type="email"
                     value={formData.email}
@@ -147,6 +158,7 @@ const Contact = () => {
                   
                   <FloatingTextarea
                     id="message"
+                    name="message"
                     label="Project Details"
                     value={formData.message}
                     onChange={handleChange}
@@ -191,7 +203,12 @@ const Contact = () => {
                     </span>
                     <div>
                       <p className="font-medium text-slate-900 dark:text-white">Email</p>
-                      <p className="text-slate-600 dark:text-slate-300">hello@ujwal.dev</p>
+                      <a 
+                        href="mailto:magarujal6@gmail.com" 
+                        className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-colors"
+                      >
+                        magarujal6@gmail.com
+                      </a>
                     </div>
                   </div>
                   
@@ -201,7 +218,14 @@ const Contact = () => {
                     </span>
                     <div>
                       <p className="font-medium text-slate-900 dark:text-white">LinkedIn</p>
-                      <p className="text-slate-600 dark:text-slate-300">Connect with me professionally</p>
+                      <a 
+                        href="https://www.linkedin.com/in/ujwalmagar/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-colors"
+                      >
+                        Connect with me professionally
+                      </a>
                     </div>
                   </div>
                   
@@ -211,7 +235,14 @@ const Contact = () => {
                     </span>
                     <div>
                       <p className="font-medium text-slate-900 dark:text-white">GitHub</p>
-                      <p className="text-slate-600 dark:text-slate-300">View my code and projects</p>
+                      <a 
+                        href="https://github.com/ujwalmagar"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-colors"
+                      >
+                        View my code and projects
+                      </a>
                     </div>
                   </div>
                 </div>

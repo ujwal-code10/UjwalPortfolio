@@ -1,9 +1,9 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 interface FloatingTextareaProps {
   id: string;
+  name: string;
   label: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
@@ -15,6 +15,7 @@ interface FloatingTextareaProps {
 
 const FloatingTextarea: React.FC<FloatingTextareaProps> = ({
   id,
+  name,
   label,
   value,
   onChange,
@@ -31,6 +32,7 @@ const FloatingTextarea: React.FC<FloatingTextareaProps> = ({
     <div className="relative">
       <textarea
         id={id}
+        name={name}
         value={value}
         onChange={onChange}
         onFocus={() => setIsFocused(true)}

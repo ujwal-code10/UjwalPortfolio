@@ -1,9 +1,9 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 interface FloatingInputProps {
   id: string;
+  name: string;
   label: string;
   type?: string;
   value: string;
@@ -15,6 +15,7 @@ interface FloatingInputProps {
 
 const FloatingInput: React.FC<FloatingInputProps> = ({
   id,
+  name,
   label,
   type = 'text',
   value,
@@ -32,6 +33,7 @@ const FloatingInput: React.FC<FloatingInputProps> = ({
       <input
         type={type}
         id={id}
+        name={name}
         value={value}
         onChange={onChange}
         onFocus={() => setIsFocused(true)}

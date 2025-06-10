@@ -13,18 +13,18 @@ const Projects = () => {
       category: 'Landing Page',
       description: 'Modern SaaS landing page with animated hero section and conversion-focused design',
       image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      tools: ['React', 'Tailwind CSS', 'Framer Motion'],
-      demoLink: '#',
-      githubLink: '#'
+      tools: ['React', 'Tailwind CSS', 'Responsive Design'],
+      demoLink: 'https://v0-react-landing-page-template-ashen.vercel.app/',
+      githubLink: 'https://github.com/ujwal-code10/saas-project-landing-page.git'
     },
     {
       title: 'Creative Portfolio',
       category: 'Portfolio',
       description: 'Minimalist portfolio website for a graphic designer showcasing creative work',
       image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      tools: ['React', 'Tailwind CSS', 'React Router'],
-      demoLink: '#',
-      githubLink: '#'
+      tools: ['React', 'Tailwind CSS', 'Framer Motion'],
+      demoLink: 'https://elevate-personal-page.vercel.app/',
+      githubLink: 'https://github.com/ujwal-code10/ujwal.dev.git'
     },
     {
       title: 'Analytics Dashboard',
@@ -32,8 +32,8 @@ const Projects = () => {
       description: 'Comprehensive admin dashboard with data visualization and user management',
       image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       tools: ['React', 'Tailwind CSS', 'Chart.js', 'React Query'],
-      demoLink: '#',
-      githubLink: '#'
+      demoLink: 'https://admin-dashboard-jade-two-66.vercel.app/',
+      githubLink: 'https://github.com/ujwal-code10/admin-dashboard-.git'
     },
     {
       title: 'Restaurant Website',

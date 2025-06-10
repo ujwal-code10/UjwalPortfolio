@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Footer = () => {
@@ -14,24 +13,27 @@ const Footer = () => {
           
           <div className="flex space-x-6">
             <a
-              href="https://github.com"
+              href="https://github.com/ujwalmagar"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-600 hover:text-indigo-600 transition-colors"
+              aria-label="Visit my GitHub profile"
             >
               GitHub
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/ujwalmagar/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-600 hover:text-indigo-600 transition-colors"
+              aria-label="Connect with me on LinkedIn"
             >
               LinkedIn
             </a>
             <a
-              href="mailto:hello@ujwal.dev"
+              href="mailto:magarujal6@gmail.com"
               className="text-slate-600 hover:text-indigo-600 transition-colors"
+              aria-label="Send me an email"
             >
               Email
             </a>
