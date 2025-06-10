@@ -129,9 +129,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-Ujwal - [@ujwal_twitter](https://twitter.com/ujwal_twitter)
+Ujwal -(https://www.linkedin.com/in/ujwalmagar)
 
-Project Link: [https://github.com/ujwal/portfolio](https://github.com/ujwal/portfolio)
+Project Link: (https://ujwal-portfolio-7d7v.vercel.app/)
 
 ## 🙏 Acknowledgments
 
