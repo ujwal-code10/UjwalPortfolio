@@ -9,24 +9,24 @@ const Home = () => {
       description: 'High-converting landing page with smooth animations and clear CTAs',
       tools: ['React', 'Tailwind CSS', 'Framer Motion'],
       image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      demoUrl: 'https://saas-landing-demo.ujwal.dev',
-      codeUrl: 'https://github.com/ujwal/saas-landing'
+      demoUrl: 'https://v0-react-landing-page-template-ashen.vercel.app/',
+      codeUrl: 'https://github.com/ujwal-code10/saas-project-landing-page.git'
     },
     {
       title: 'Portfolio Website',
       description: 'Clean, minimal portfolio showcasing creative work and projects',
       tools: ['React', 'Tailwind CSS', 'React Router'],
       image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      demoUrl: 'https://portfolio-demo.ujwal.dev',
-      codeUrl: 'https://github.com/ujwal/portfolio'
+      demoUrl: 'https://elevate-personal-page.vercel.app/',
+      codeUrl: 'https://github.com/ujwal-code10/ujwal.dev.git'
     },
     {
       title: 'Admin Dashboard',
       description: 'Modern dashboard UI with interactive charts and data visualization',
       tools: ['React', 'Tailwind CSS', 'Chart.js'],
       image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      demoUrl: 'https://admin-dashboard-demo.ujwal.dev',
-      codeUrl: 'https://github.com/ujwal/admin-dashboard'
+      demoUrl: 'https://admin-dashboard-jade-two-66.vercel.app/',
+      codeUrl: 'https://github.com/ujwal-code10/admin-dashboard-.git'
     }
   ];
 
