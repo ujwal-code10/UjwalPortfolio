@@ -25,8 +25,8 @@ const Home = () => {
       description: 'Modern dashboard UI with interactive charts and data visualization',
       tools: ['React', 'Tailwind CSS', 'Chart.js'],
       image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      demoUrl: 'https://admin-dashboard-jade-two-66.vercel.app/',
-      codeUrl: 'https://github.com/ujwal-code10/admin-dashboard-.git'
+      demoUrl: 'https://admin-dashboard-main-plum.vercel.app/',
+      codeUrl: 'https://github.com/ujwal-code10/admin-dashboard--main.git'
     }
   ];
 
