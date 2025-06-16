@@ -40,9 +40,9 @@ const Projects = () => {
       category: 'Website',
       description: 'Multi-page restaurant website with menu, location, and reservation system',
       image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      tools: ['React', 'Tailwind CSS', 'React Router', 'Formspree'],
-      demoLink: '#',
-      githubLink: '#'
+      tools: ['React', 'Tailwind CSS', 'React Router', 'Formspree','TypeScript'],
+      demoLink: 'https://restaurant-website-ten-psi.vercel.app/',
+      githubLink: 'https://github.com/ujwal-code10/Restaurant-Website.git'
     },
     {
       title: 'Fitness App Landing',
@@ -50,18 +50,10 @@ const Projects = () => {
       description: 'High-energy landing page for a fitness app with interactive features',
       image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       tools: ['React', 'Tailwind CSS', 'GSAP'],
-      demoLink: '#',
+      demoLink: 'coming soon',
       githubLink: '#'
     },
-    {
-      title: 'Developer Portfolio',
-      category: 'Portfolio',
-      description: 'Personal portfolio for a full-stack developer with project showcase',
-      image: 'https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      tools: ['React', 'Tailwind CSS', 'TypeScript'],
-      demoLink: '#',
-      githubLink: '#'
-    }
+    
   ];
 
   const categories = ['All', 'Landing Page', 'Portfolio', 'Dashboard', 'Website'];
