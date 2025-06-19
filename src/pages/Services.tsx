@@ -19,7 +19,7 @@ const Services = () => {
       price: '$120',
       description: 'Complete sites with 3–5 pages (e.g., Home, About, Services, Projects, Contact). Designed for small businesses or creators.',
       deliveryTime: '1-2 weeks',
-      tools: ['React', 'React Router', 'Tailwind CSS'],
+      tools: ['React', 'React Router', 'Tailwind CSS', 'TypeScript'],
       features: ['Multiple pages', 'Navigation system', 'CMS integration', 'Mobile friendly']
     },
     {
@@ -42,12 +42,18 @@ const Services = () => {
     },
     {
       icon: '🧠',
-      title: 'UI/UX Design',
-      price: '$40',
-      description: 'Clean wireframes and visual layouts using Figma. You can request design + build together or code from existing mockups.',
-      deliveryTime: '2-4 days',
-      tools: ['Figma', 'Adobe XD', 'Sketch'],
-      features: ['Wireframing', 'Visual design', 'Prototyping', 'Design systems']
+      title: 'Website Redesign',
+      price: '$60 – $120',
+      description: 'Modernize outdated websites with a fresh frontend rebuild. Ideal for businesses or creators who already have a site but want a cleaner, faster, and mobile-friendly version.',
+      deliveryTime: '3–6 days',
+      tools: ['React', 'Tailwind CSS', 'Framer Motion'],
+      features: [
+        'Responsive redesign',
+        'Clean, modern layout',
+        'Faster performance',
+        'No backend changes',
+        'SEO optimized'
+      ]
     }
   ];
 
