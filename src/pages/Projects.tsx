@@ -47,11 +47,11 @@ const Projects = () => {
     {
       title: 'Fitness App Landing',
       category: 'Landing Page',
-      description: 'High-energy landing page for a fitness app with interactive features',
+      description: 'Coming Soon',
       image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       tools: ['React', 'Tailwind CSS', 'GSAP'],
-      demoLink: 'coming soon',
-      githubLink: '#'
+      demoLink: '',
+      githubLink: ''
     },
     
   ];
@@ -139,25 +139,28 @@ const Projects = () => {
                         alt={project.title}
                         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                        <div className="transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 flex gap-4">
-                          <EnhancedButton
-                            href={project.demoLink}
-                            size="lg"
-                            className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
-                          >
-                            Live Demo
-                          </EnhancedButton>
-                          <EnhancedButton
-                            href={project.githubLink}
-                            variant="outline"
-                            size="lg"
-                            className="bg-white/10 backdrop-blur-sm border-2 border-white hover:bg-white/20 text-white font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
-                          >
-                            View Code
-                          </EnhancedButton>
+                      {/* Only show buttons if demoLink and githubLink are present */}
+                      {project.demoLink && project.githubLink && (
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                          <div className="transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 flex gap-4">
+                            <EnhancedButton
+                              href={project.demoLink}
+                              size="lg"
+                              className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
+                            >
+                              Live Demo
+                            </EnhancedButton>
+                            <EnhancedButton
+                              href={project.githubLink}
+                              variant="outline"
+                              size="lg"
+                              className="bg-white/10 backdrop-blur-sm border-2 border-white hover:bg-white/20 text-white font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
+                            >
+                              View Code
+                            </EnhancedButton>
+                          </div>
                         </div>
-                      </div>
+                      )}
                     </div>
                     
                     <div className="p-6 bg-gradient-to-b from-white to-slate-50 dark:from-slate-800 dark:to-slate-900">
