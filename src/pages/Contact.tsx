@@ -65,12 +65,17 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://formspree.io/f/mbjwkzrk', {
+      const response = await fetch('https://formspree.io/f/xblyknaw', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          name: formData.name,
+          message: formData.message,
+          _replyto: formData.email
+        })
       });
 
       if (response.ok) {
@@ -81,6 +86,8 @@ const Contact = () => {
         });
         setFormData({ name: '', email: '', message: '' });
       } else {
+        const errorData = await response.json().catch(() => ({}));
+        console.error('Formspree error:', errorData);
         throw new Error('Failed to send message');
       }
     } catch (error) {
@@ -131,7 +138,7 @@ const Contact = () => {
                   Send a Message
                 </h2>
                 
-                <form onSubmit={handleSubmit} action="https://formspree.io/f/mbjwkzrk" method="POST" className="space-y-6" noValidate>
+                <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                   <FloatingInput
                     id="name"
                     name="name"
@@ -236,7 +243,7 @@ const Contact = () => {
                     <div>
                       <p className="font-medium text-slate-900 dark:text-white">GitHub</p>
                       <a 
-                        href="https://github.com/ujwalmagar"
+                        href="https://github.com/ujwal-code10/UjwalPortfolio.git"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-colors"
