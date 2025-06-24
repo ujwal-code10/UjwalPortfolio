@@ -15,7 +15,7 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       tools: ['React', 'Tailwind CSS', 'Responsive Design'],
       demoLink: 'https://v0-react-landing-page-template-ashen.vercel.app/',
-      githubLink: 'https://github.com/ujwal-code10/saas-project-landing-page.git'
+      githubLink: 'https://github.com/ujwal-code10/saas-project-landing-page'
     },
     {
       title: 'Creative Portfolio',
@@ -24,7 +24,7 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       tools: ['React', 'Tailwind CSS', 'Framer Motion'],
       demoLink: 'https://elevate-personal-page.vercel.app/',
-      githubLink: 'https://github.com/ujwal-code10/ujwal.dev.git'
+      githubLink: 'https://github.com/ujwal-code10/ujwal.dev'
     },
     {
       title: 'Analytics Dashboard',
@@ -33,7 +33,7 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       tools: ['React', 'Tailwind CSS', 'Chart.js', 'React Query'],
       demoLink: 'https://admin-dashboard-main-plum.vercel.app/',
-      githubLink: 'https://github.com/ujwal-code10/admin-dashboard--main.git'
+      githubLink: 'https://github.com/ujwal-code10/admin-dashboard--main'
     },
     {
       title: 'Restaurant Website',
@@ -42,16 +42,16 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       tools: ['React', 'Tailwind CSS', 'React Router', 'Formspree','TypeScript'],
       demoLink: 'https://restaurant-website-ten-psi.vercel.app/',
-      githubLink: 'https://github.com/ujwal-code10/Restaurant-Website.git'
+      githubLink: 'https://github.com/ujwal-code10/Restaurant-Website'
     },
     {
       title: 'Fitness App Landing',
       category: 'Landing Page',
-      description: 'Coming Soon',
+      description: 'A clean and responsive landing page designed to promote a fictional AI-powered fitness mobile app.',
       image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      tools: ['React', 'Tailwind CSS', 'GSAP'],
-      demoLink: '',
-      githubLink: ''
+      tools: ['React', 'Tailwind CSS', 'TypeScript'],
+      demoLink: 'https://trainrx-ai-fitness-hub-main.vercel.app/',
+      githubLink: 'https://github.com/ujwal-code10/trainrx-ai-fitness-hub-main'
     },
     
   ];

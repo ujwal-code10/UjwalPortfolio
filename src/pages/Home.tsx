@@ -39,7 +39,7 @@ const Home = () => {
             Hi, I'm <span className="text-indigo-600 dark:text-indigo-400">Ujwal</span>
           </h1>
           <p className="text-xl sm:text-2xl text-slate-600 dark:text-slate-200 mb-4">
-            Frontend Developer & UI/UX Visual Builder
+            Frontend Developer - Clean UI & Responsive Web
           </p>
           <p className="text-lg text-slate-500 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
             Clean UI. Fast delivery. I build beautiful, responsive websites using modern tools and AI-enhanced workflows.

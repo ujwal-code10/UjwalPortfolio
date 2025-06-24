@@ -7,16 +7,17 @@ const About = () => {
     { name: 'React', level: 'Advanced' },
     { name: 'Tailwind CSS', level: 'Advanced' },
     { name: 'JavaScript', level: 'Intermediate' },
-    { name: 'Figma', level: 'Advanced' },
+    { name: 'TypeScript', level: 'Intermediate' },
     { name: 'Git', level: 'Intermediate' },
     { name: 'AI Tools', level: 'Advanced' },
+    { name: 'UI/UX Principles', level: 'Intermediate' },
   ];
 
   const workflow = [
     {
       step: '1',
       title: 'Design & Planning',
-      description: 'Create wireframes and visual designs in Figma, focusing on user experience and clean aesthetics.'
+      description: 'Define layout and flow using basic wireframing, sketches, or reference designs. I focus on clarity, spacing, and usability.'
     },
     {
       step: '2',
@@ -53,18 +54,14 @@ const About = () => {
             </h2>
             <div className="prose text-slate-600 leading-relaxed space-y-4">
               <p>
-                I'm a frontend developer and UI/UX designer who believes in the power of clean, 
-                purposeful design. With a focus on modern web technologies and AI-enhanced workflows, 
-                I help businesses and individuals create digital experiences that truly connect with their audience.
+                I'm a frontend developer who focuses on building clean, responsive user interfaces using modern web technologies. While I'm not a full-time UI/UX designer, I understand the core principles of visual design and usability, which I apply to every project I build. My goal is to create intuitive and visually consistent digital experiences that feel great on all devices.
               </p>
               <p>
-                My approach combines traditional design principles with cutting-edge development tools. 
-                I leverage AI assistants and modern frameworks to deliver high-quality websites faster 
-                than traditional development methods, without compromising on quality or attention to detail.
+              I specialize in React and Tailwind CSS, and I speed up development using AI-enhanced tools like Cursor, V0.dev, Lovable.dev and ChatGPT. These tools help me deliver high-quality frontend code faster without compromising on clarity or attention to detail. I enjoy working with structured layouts, smooth transitions, and scalable components that keep the user experience at the center.
+
               </p>
               <p>
-                When I'm not coding, you'll find me exploring new design trends, learning about emerging 
-                web technologies, or contributing to the developer community through projects and knowledge sharing.
+              When I'm not building, I spend time exploring design trends, improving my development workflow, and learning about emerging web technologies. Whether it's a portfolio, landing page, or dashboard, I bring a clear process and a modern frontend toolkit to every project.
               </p>
             </div>
           </Card>
@@ -82,7 +79,7 @@ const About = () => {
               How I bring ideas to life through design and development
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {workflow.map((item, index) => (
               <Card key={index} className="p-6 text-center">
@@ -112,7 +109,7 @@ const About = () => {
               Technologies and tools I use to create amazing web experiences
             </p>
           </div>
-          
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {skills.map((skill, index) => (
               <Card key={index} className="p-6">
