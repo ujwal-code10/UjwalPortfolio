@@ -5,7 +5,7 @@ import Button from '../components/Button';
 const Services = () => {
   const services = [
     {
-      icon: '🛠️',
+      
       title: 'Landing Pages',
       price: '$50',
       description: 'High-converting single-page sites with smooth scroll, clean CTA, and responsive layout. Ideal for SaaS, personal brands, or products.',
@@ -14,7 +14,7 @@ const Services = () => {
       features: ['Responsive design', 'Fast loading', 'SEO optimized', 'Contact forms']
     },
     {
-      icon: '🌐',
+      
       title: 'Multi-Page Websites',
       price: '$120',
       description: 'Complete sites with 3–5 pages (e.g., Home, About, Services, Projects, Contact). Designed for small businesses or creators.',
@@ -23,7 +23,7 @@ const Services = () => {
       features: ['Multiple pages', 'Navigation system', 'CMS integration', 'Mobile friendly']
     },
     {
-      icon: '🎨',
+      
       title: 'Portfolio Sites',
       price: '$80',
       description: 'Personal websites for developers, designers, or freelancers. Showcases projects, skills, and contact info.',
@@ -32,7 +32,7 @@ const Services = () => {
       features: ['Project gallery', 'About section', 'Skills showcase', 'Contact form']
     },
     {
-      icon: '📊',
+     
       title: 'Admin Dashboards',
       price: '$150',
       description: 'Dashboard UIs with reusable components (sidebar, cards, tables, charts). Built with Tailwind and React.',
@@ -41,7 +41,7 @@ const Services = () => {
       features: ['Data visualization', 'Responsive tables', 'Interactive charts', 'User management']
     },
     {
-      icon: '🧠',
+      
       title: 'Website Redesign',
       price: '$60 – $120',
       description: 'Modernize outdated websites with a fresh frontend rebuild. Ideal for businesses or creators who already have a site but want a cleaner, faster, and mobile-friendly version.',
@@ -77,7 +77,7 @@ const Services = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Card key={index} hover className="rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 h-full flex flex-col">
-                <div className="text-3xl mb-4">{service.icon}</div>
+                <div className="text-3xl mb-4"></div>
                 <div className="flex justify-between items-center mb-3">
                   <h3 className="text-xl font-semibold text-gray-800">
                     {service.title}

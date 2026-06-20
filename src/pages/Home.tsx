@@ -5,6 +5,13 @@ import Card from '../components/Card';
 const Home = () => {
   const featuredProjects = [
     {
+      title: 'Smart Reply Assistant',
+      description: 'AI-powered reply generation for social media sellers with product context engine.',
+      tools: ['React', 'Tailwind CSS', 'AI Engine'],
+      image: '/smart-reply.png',
+      demoUrl: 'https://sellers-inbox-ai.vercel.app/'
+    },
+    {
       title: 'SaaS Landing Page',
       description: 'High-converting landing page with smooth animations and clear CTAs',
       tools: ['React', 'Tailwind CSS', 'Framer Motion'],
@@ -105,28 +112,32 @@ const Home = () => {
                       {project.title}
                     </h4>
                     <div className="flex flex-col sm:flex-row items-center gap-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <a
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full sm:w-auto px-8 py-3 bg-indigo-600 text-white font-bold rounded-lg transition-all duration-200 transform hover:scale-105 hover:-translate-y-1 hover:shadow-xl inline-flex items-center justify-center gap-2 hover:bg-indigo-500 ring-2 ring-white/20"
-                      >
-                        <span>Live Demo</span>
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                      </a>
-                      <a
-                        href={project.codeUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full sm:w-auto px-8 py-3 bg-white/10 text-white font-bold rounded-lg transition-all duration-200 transform hover:scale-105 hover:-translate-y-1 hover:shadow-xl inline-flex items-center justify-center gap-2 hover:bg-white/20 backdrop-blur-sm ring-2 ring-white/20"
-                      >
-                        <span>View Code</span>
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                        </svg>
-                      </a>
+                      {project.demoUrl && (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full sm:w-auto px-8 py-3 bg-indigo-600 text-white font-bold rounded-lg transition-all duration-200 transform hover:scale-105 hover:-translate-y-1 hover:shadow-xl inline-flex items-center justify-center gap-2 hover:bg-indigo-500 ring-2 ring-white/20"
+                        >
+                          <span>Live Demo</span>
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      )}
+                      {project.codeUrl && (
+                        <a
+                          href={project.codeUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full sm:w-auto px-8 py-3 bg-white/10 text-white font-bold rounded-lg transition-all duration-200 transform hover:scale-105 hover:-translate-y-1 hover:shadow-xl inline-flex items-center justify-center gap-2 hover:bg-white/20 backdrop-blur-sm ring-2 ring-white/20"
+                        >
+                          <span>View Code</span>
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                          </svg>
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
