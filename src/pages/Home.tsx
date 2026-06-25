@@ -1,185 +1,111 @@
-import React from 'react';
-import Button from '../components/Button';
-import Card from '../components/Card';
+import { Link } from 'react-router-dom';
+import PageWrapper from '../components/ui/PageWrapper';
+import { profile } from '../data/profile';
+
+const monoStyle = { fontFamily: "'JetBrains Mono', monospace" };
+
+const workItems = [
+  { title: 'Grounded AI', detail: 'AI that reads from a database before it replies.' },
+  { title: 'Booking systems', detail: 'State machines, not just a bookings table.' },
+  { title: 'Payment flows', detail: 'Authorize, hold, capture, release.' },
+  { title: 'Role-scoped APIs', detail: 'Different users, different data, enforced server-side.' },
+  { title: 'Background jobs', detail: 'Notifications, cleanup, and scheduling that runs async.' },
+  { title: 'Flutter apps', detail: 'Mobile frontends connected to a real backend.' },
+];
 
 const Home = () => {
-  const featuredProjects = [
-    {
-      title: 'Smart Reply Assistant',
-      description: 'AI-powered reply generation for social media sellers with product context engine.',
-      tools: ['React', 'Tailwind CSS', 'AI Engine'],
-      image: '/smart-reply.png',
-      demoUrl: 'https://sellers-inbox-ai.vercel.app/'
-    },
-    {
-      title: 'SaaS Landing Page',
-      description: 'High-converting landing page with smooth animations and clear CTAs',
-      tools: ['React', 'Tailwind CSS', 'Framer Motion'],
-      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      demoUrl: 'https://v0-react-landing-page-template-ashen.vercel.app/',
-      codeUrl: 'https://github.com/ujwal-code10/saas-project-landing-page.git'
-    },
-    {
-      title: 'Portfolio Website',
-      description: 'Clean, minimal portfolio showcasing creative work and projects',
-      tools: ['React', 'Tailwind CSS', 'React Router'],
-      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      demoUrl: 'https://elevate-personal-page.vercel.app/',
-      codeUrl: 'https://github.com/ujwal-code10/ujwal.dev.git'
-    },
-    {
-      title: 'Admin Dashboard',
-      description: 'Modern dashboard UI with interactive charts and data visualization',
-      tools: ['React', 'Tailwind CSS', 'Chart.js'],
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      demoUrl: 'https://admin-dashboard-main-plum.vercel.app/',
-      codeUrl: 'https://github.com/ujwal-code10/admin-dashboard--main.git'
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-900">
-      {/* Hero Section */}
-      <section className="pt-16 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6">
-            Hi, I'm <span className="text-indigo-600 dark:text-indigo-400">Ujwal</span>
-          </h1>
-          <p className="text-xl sm:text-2xl text-slate-600 dark:text-slate-200 mb-4">
-            Frontend Developer - Clean UI & Responsive Web
-          </p>
-          <p className="text-lg text-slate-500 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
-            Clean UI. Fast delivery. I build beautiful, responsive websites using modern tools and AI-enhanced workflows.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button to="/services" size="lg">
-              View Services
-            </Button>
-            <Button to="/contact" variant="outline" size="lg">
-              Contact Me
-            </Button>
-          </div>
-        </div>
-      </section>
+    <PageWrapper
+      title="Home"
+      description="Ujwal Magar built Seller Inbox AI, a live AI reply tool for Nepali Instagram sellers, and is building Velora, a Flutter tutor marketplace with Stripe payment holds and booking state machines."
+    >
+      <main className="mx-auto w-full max-w-[1120px] px-4 md:px-8">
 
-      {/* Intro Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
-            Crafting Digital Experiences
-          </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-200 leading-relaxed">
-            I specialize in creating clean, modern websites that convert visitors into customers. 
-            From landing pages to complete web applications, I combine thoughtful design with 
-            efficient development to deliver results that matter to your business.
-          </p>
-        </div>
-      </section>
-
-      {/* Featured Projects */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
-              Featured Projects
-            </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-200">
-              Recent work showcasing clean design and modern development
+        {/* Hero */}
+        <section className="border-b border-[var(--border)] pb-24 pt-20 md:pb-28">
+          <div className="max-w-3xl space-y-6">
+            <p
+              className="text-[12px] font-medium uppercase tracking-[0.14em] text-[var(--accent)]"
+              style={monoStyle}
+            >
+              {profile.name} — {profile.role}
             </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProjects.map((project, index) => (
-              <Card 
-                key={index} 
-                hover 
-                className="group overflow-hidden flex flex-col bg-white dark:bg-slate-800 shadow-lg rounded-xl transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl relative"
+
+            <h1 className="text-[40px] font-extrabold leading-[1.1] tracking-[-0.04em] text-[var(--text)] md:text-[60px]">
+              I shipped an AI reply tool for Nepali sellers.{' '}
+              <span className="text-[var(--muted)]">Velora is next.</span>
+            </h1>
+
+            <p className="max-w-2xl text-[17px] leading-7 text-[var(--muted)] md:text-[18px]">
+              {profile.summary}
+            </p>
+
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Link
+                to="/projects"
+                className="rounded-lg bg-[var(--button-bg)] px-6 py-3 text-[12px] font-medium text-[var(--button-text)] transition hover:bg-[var(--button-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+                style={monoStyle}
               >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110 group-hover:blur-[2px]"
-                  />
-                  {/* Overlay that's always visible with gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
-                  
-                  {/* Hover overlay with buttons */}
-                  <div 
-                    className="absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center gap-6 p-6 backdrop-blur-sm"
-                  >
-                    <h4 className="text-white font-bold text-2xl text-center mb-2 transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      {project.title}
-                    </h4>
-                    <div className="flex flex-col sm:flex-row items-center gap-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      {project.demoUrl && (
-                        <a
-                          href={project.demoUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-full sm:w-auto px-8 py-3 bg-indigo-600 text-white font-bold rounded-lg transition-all duration-200 transform hover:scale-105 hover:-translate-y-1 hover:shadow-xl inline-flex items-center justify-center gap-2 hover:bg-indigo-500 ring-2 ring-white/20"
-                        >
-                          <span>Live Demo</span>
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                        </a>
-                      )}
-                      {project.codeUrl && (
-                        <a
-                          href={project.codeUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-full sm:w-auto px-8 py-3 bg-white/10 text-white font-bold rounded-lg transition-all duration-200 transform hover:scale-105 hover:-translate-y-1 hover:shadow-xl inline-flex items-center justify-center gap-2 hover:bg-white/20 backdrop-blur-sm ring-2 ring-white/20"
-                        >
-                          <span>View Code</span>
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                          </svg>
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-                <div className="p-6 flex-1 flex flex-col bg-gradient-to-b from-white to-slate-50 dark:from-slate-800 dark:to-slate-900">
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-slate-600 dark:text-slate-300 mb-4 line-clamp-2">
-                      {project.description}
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-slate-200 dark:border-slate-700">
-                    {project.tools.map((tool, toolIndex) => (
-                      <span
-                        key={toolIndex}
-                        className="px-4 py-2 bg-gradient-to-r from-indigo-500/10 via-indigo-500/5 to-indigo-500/10 dark:from-indigo-400/20 dark:via-indigo-400/10 dark:to-indigo-400/20 text-indigo-700 dark:text-indigo-300 text-sm rounded-lg font-semibold inline-flex items-center gap-2 transform transition-all duration-200 hover:scale-105 hover:shadow-md hover:bg-indigo-500/20 dark:hover:bg-indigo-400/30"
-                      >
-                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 8 8">
-                          <circle cx="4" cy="4" r="3"/>
-                        </svg>
-                        {tool}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </Card>
+                See the Projects
+              </Link>
+              <a
+                href={profile.links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg border border-[var(--border)] bg-[var(--surface-strong)] px-6 py-3 text-[12px] font-medium text-[var(--muted)] transition hover:bg-[var(--surface)] hover:text-[var(--text)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+                style={monoStyle}
+              >
+                GitHub
+              </a>
+            </div>
+
+            {/* Status badges */}
+            <div className="flex flex-wrap items-center gap-3 pt-4">
+              <div
+                className="flex items-center gap-2 rounded-sm border border-[var(--border)] bg-[var(--surface-elevated)] px-3 py-1.5 text-[11px] text-[var(--muted)] shadow-sm"
+                style={monoStyle}
+              >
+                <span className="relative flex h-2 w-2" aria-hidden="true">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent)] opacity-70" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--accent)]" />
+                </span>
+                Seller Inbox AI — Live
+              </div>
+              <div
+                className="flex items-center gap-2 rounded-sm border border-[var(--border)] bg-[var(--surface-elevated)] px-3 py-1.5 text-[11px] text-[var(--muted)] shadow-sm"
+                style={monoStyle}
+              >
+                Velora — In Development
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* What I work on */}
+        <section className="py-16">
+          <h2 className="mb-2 text-[22px] font-bold tracking-[-0.02em] text-[var(--text)]">
+            What I work on
+          </h2>
+          <p className="mb-8 text-[15px] text-[var(--muted)]">
+            Systems that need to be correct, not just functional.
+          </p>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {workItems.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-sm border border-[var(--border)] bg-[var(--surface-elevated)] px-4 py-3"
+              >
+                <p className="text-[13px] font-semibold text-[var(--text)]" style={monoStyle}>
+                  {item.title}
+                </p>
+                <p className="mt-1 text-[12px] leading-5 text-[var(--muted)]">{item.detail}</p>
+              </div>
             ))}
           </div>
-          
-          <div className="text-center mt-16">
-            <Button 
-              to="/projects" 
-              variant="outline"
-              className="px-10 py-4 text-lg font-bold hover:scale-105 transition-all duration-200 hover:shadow-lg"
-            >
-              View All Projects
-            </Button>
-          </div>
-        </div>
-      </section>
-    </div>
+        </section>
+
+      </main>
+    </PageWrapper>
   );
 };
 

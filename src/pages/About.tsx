@@ -1,132 +1,126 @@
+import PageWrapper from '../components/ui/PageWrapper';
+import { profile, techGroups } from '../data/profile';
 
-import React from 'react';
-import Card from '../components/Card';
+const monoStyle = { fontFamily: "'JetBrains Mono', monospace" };
 
 const About = () => {
-  const skills = [
-    { name: 'React', level: 'Advanced' },
-    { name: 'Tailwind CSS', level: 'Advanced' },
-    { name: 'JavaScript', level: 'Intermediate' },
-    { name: 'TypeScript', level: 'Intermediate' },
-    { name: 'Git', level: 'Intermediate' },
-    { name: 'AI Tools', level: 'Advanced' },
-    { name: 'UI/UX Principles', level: 'Intermediate' },
-  ];
-
-  const workflow = [
-    {
-      step: '1',
-      title: 'Design & Planning',
-      description: 'Define layout and flow using basic wireframing, sketches, or reference designs. I focus on clarity, spacing, and usability.'
-    },
-    {
-      step: '2',
-      title: 'AI-Enhanced Development',
-      description: 'Build with React and Tailwind CSS, leveraging AI tools like Cursor, V0.dev, and ChatGPT for faster development.'
-    },
-    {
-      step: '3',
-      title: 'Polish & Deploy',
-      description: 'Refine interactions, ensure responsiveness, and deploy with modern hosting solutions.'
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="pt-16 pb-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl font-bold text-slate-900 mb-6">
-            About Me
-          </h1>
-          <p className="text-xl text-slate-600">
-            Passionate about creating beautiful, functional web experiences
+    <PageWrapper
+      title="About"
+      description="Ujwal Magar is a full-stack engineer based in Nepal building Seller Inbox AI and Velora. Focused on product systems where the backend behavior matters as much as the UI."
+    >
+      <main className="mx-auto w-full max-w-[1120px] px-4 md:px-8">
+
+        {/* Hero */}
+        <section className="border-b border-[var(--border)] py-16 md:py-20">
+          <p
+            className="text-[12px] font-medium uppercase tracking-[0.14em] text-[var(--accent)]"
+            style={monoStyle}
+          >
+            {profile.role} — {profile.location}
           </p>
-        </div>
-      </section>
+          <h1 className="mt-5 max-w-3xl text-[40px] font-extrabold leading-[1.08] tracking-[-0.04em] text-[var(--text)] md:text-[54px]">
+            I care about what happens after the form submits.
+          </h1>
+          <p className="mt-6 max-w-2xl text-[18px] leading-8 text-[var(--muted)]">
+            API contracts, database rules, role permissions, payment flows, background jobs — the
+            parts most tutorials skip over.
+          </p>
+        </section>
 
-      {/* Bio Section */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">
-          <Card className="p-8">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">
-              Who I Am
+        {/* Why these products */}
+        <section className="grid gap-10 border-b border-[var(--border)] py-16 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <h2
+              className="border-l-4 border-[var(--accent)] pl-4 text-[24px] font-bold tracking-[-0.03em] text-[var(--text)]"
+            >
+              Why these products
             </h2>
-            <div className="prose text-slate-600 leading-relaxed space-y-4">
-              <p>
-                I'm a frontend developer who focuses on building clean, responsive user interfaces using modern web technologies. While I'm not a full-time UI/UX designer, I understand the core principles of visual design and usability, which I apply to every project I build. My goal is to create intuitive and visually consistent digital experiences that feel great on all devices.
-              </p>
-              <p>
-              I specialize in React and Tailwind CSS, and I speed up development using AI-enhanced tools like Cursor, V0.dev, Lovable.dev and ChatGPT. These tools help me deliver high-quality frontend code faster without compromising on clarity or attention to detail. I enjoy working with structured layouts, smooth transitions, and scalable components that keep the user experience at the center.
-
-              </p>
-              <p>
-              When I'm not building, I spend time exploring design trends, improving my development workflow, and learning about emerging web technologies. Whether it's a portfolio, landing page, or dashboard, I bring a clear process and a modern frontend toolkit to every project.
-              </p>
-            </div>
-          </Card>
-        </div>
-      </section>
-
-      {/* Workflow Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              My Workflow
-            </h2>
-            <p className="text-lg text-slate-600">
-              How I bring ideas to life through design and development
+          </div>
+          <div className="space-y-6 text-[17px] leading-8 text-[var(--muted)] md:col-span-8">
+            <p>
+              Seller Inbox AI came from watching how sellers in Nepal handle customer messages.
+              They were copying product details by hand into chat, or using generic AI that gave
+              wrong answers. The fix wasn&apos;t a better prompt — it was a system that fetches
+              the seller&apos;s actual catalog before generating anything.
+            </p>
+            <p>
+              Velora came from the opposite direction: the backend problem first. A tutor
+              marketplace without a proper booking state machine is just a scheduling app. When
+              money moves at booking and transfers at session completion, the state transitions
+              have to be correct. That&apos;s what I&apos;m building.
             </p>
           </div>
+        </section>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {workflow.map((item, index) => (
-              <Card key={index} className="p-6 text-center">
-                <div className="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-slate-600">
-                  {item.description}
-                </p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Skills & Tools
+        {/* What I find interesting */}
+        <section className="grid gap-10 border-b border-[var(--border)] py-16 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <h2
+              className="border-l-4 border-[var(--accent)] pl-4 text-[24px] font-bold tracking-[-0.03em] text-[var(--text)]"
+            >
+              What I find interesting
             </h2>
-            <p className="text-lg text-slate-600">
-              Technologies and tools I use to create amazing web experiences
-            </p>
           </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skills.map((skill, index) => (
-              <Card key={index} className="p-6">
-                <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-medium text-slate-900">
-                    {skill.name}
-                  </h3>
-                  <span className="text-sm text-indigo-600 font-medium">
-                    {skill.level}
-                  </span>
-                </div>
-              </Card>
+          <div className="space-y-4 md:col-span-8">
+            {[
+              {
+                q: 'When should a payment be captured?',
+                a: 'Not at checkout. At session completion. That requires coordinating the booking state with the payment intent lifecycle.',
+              },
+              {
+                q: 'How do you prevent an AI from hallucinating product details?',
+                a: 'You don\'t prompt-engineer your way out of it. You build a retrieval layer that gives the model real data.',
+              },
+              {
+                q: 'Who can see what in a marketplace?',
+                a: 'Role scoping at the middleware level, not the frontend. A student shouldn\'t reach a tutor\'s earnings endpoint regardless of UI.',
+              },
+            ].map((item) => (
+              <div
+                key={item.q}
+                className="rounded-sm border border-[var(--border)] bg-[var(--surface-elevated)] p-5"
+              >
+                <p className="text-[14px] font-semibold text-[var(--text)]">{item.q}</p>
+                <p className="mt-2 text-[13px] leading-6 text-[var(--muted)]">{item.a}</p>
+              </div>
             ))}
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+
+        {/* Technical foundation */}
+        <section className="py-16">
+          <h2 className="mb-8 text-[24px] font-bold tracking-[-0.03em] text-[var(--text)]">
+            Technical foundation
+          </h2>
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-6">
+            {techGroups.map((group) => (
+              <div key={group.title} className="flex flex-col gap-3">
+                <h4
+                  className="border-b border-[var(--border)] pb-2 text-[13px] font-bold text-[var(--text)]"
+                  style={monoStyle}
+                >
+                  {group.title}
+                </h4>
+                <ul className="flex flex-col gap-2">
+                  {group.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-2 text-[12px] text-[var(--muted)]"
+                      style={monoStyle}
+                    >
+                      <span className="block h-1 w-1 bg-[var(--accent)]" aria-hidden="true" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+      </main>
+    </PageWrapper>
   );
 };
 
