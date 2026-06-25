@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
@@ -15,10 +14,10 @@ const PageWrapper: React.FC<PageWrapperProps> = ({
   children,
   title,
   description,
-  keywords = 'frontend developer, ui ux designer, react developer, tailwind css, web development, portfolio',
+  keywords = 'full-stack developer, web developer, mobile developer, React developer, Flutter developer, Node.js developer, TypeScript, PostgreSQL, SaaS, marketplace app, AI web app',
   className = ''
 }) => {
-  const fullTitle = `${title} | Ujwal - Frontend Developer & UI/UX Designer`;
+  const fullTitle = `${title} | Ujwal Magar - Full-Stack Web & Mobile Developer`;
 
   return (
     <>
@@ -28,15 +27,17 @@ const PageWrapper: React.FC<PageWrapperProps> = ({
         <meta name="keywords" content={keywords} />
         <meta property="og:title" content={fullTitle} />
         <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
         <meta name="twitter:title" content={fullTitle} />
         <meta name="twitter:description" content={description} />
       </Helmet>
+
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.5 }}
-        className={`min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300 ${className}`}
+        transition={{ duration: 0.35 }}
+        className={`min-h-screen bg-[var(--bg)] text-[var(--text)] ${className}`}
+        style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}
       >
         {children}
       </motion.div>

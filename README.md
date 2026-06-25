@@ -1,142 +1,49 @@
-# Ujwal's Portfolio Website
+# Ujwal Magar — Full-Stack Web & Mobile Developer Portfolio
 
-A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. This website showcases my projects, skills, and professional experience with a focus on clean design and smooth user experience.
+A focused portfolio for my current full-stack direction: SaaS apps, marketplace workflows, backend APIs, databases, authentication, payments, AI features, and Flutter integration.
 
-![Portfolio Preview](public/preview.png)
+## Current Structure
 
-## 🌟 Features
+- `/` — clean homepage / positioning
+- `/projects` — engineering portfolio and project proof
+- `/about` — direction and technical foundation
+- `/contact` — contact form and links
 
-- **Responsive Design**: Fully responsive layout that works beautifully on all devices
-- **Dark Mode**: Elegant dark mode implementation with smooth transitions
-- **Project Showcase**: Interactive project cards with live demos and source code links
-- **Modern UI**: Clean and professional design with subtle animations
-- **Performance Optimized**: Fast loading times and smooth interactions
-- **Accessibility**: WCAG compliant with proper semantic HTML and ARIA attributes
+## Screenshot Setup
 
-## 🛠️ Built With
+Add the Seller Inbox AI screenshot here:
 
-- **Frontend Framework**: React 18 with TypeScript
-- **Styling**: Tailwind CSS with custom configurations
-- **Animations**: Framer Motion
-- **State Management**: React Context
-- **Routing**: React Router v6
-- **Code Quality**: ESLint & Prettier
-- **Build Tool**: Vite
-- **Deployment**: Vercel
-
-## 🚀 Quick Start
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/ujwal/portfolio.git
-   cd portfolio
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Build for production**
-   ```bash
-   npm run build
-   ```
-
-## 📂 Project Structure
-
-```
-src/
-├── components/        # Reusable UI components
-├── pages/            # Page components
-├── layouts/          # Layout components
-├── hooks/            # Custom React hooks
-├── context/          # React context providers
-├── styles/           # Global styles and Tailwind config
-├── types/            # TypeScript type definitions
-└── utils/            # Utility functions
+```txt
+public/projects/seller-inbox-reply.png
 ```
 
-## 🎯 Key Features Explained
+The projects page will show that image inside a browser-style frame. If the file is missing, it shows a fallback message.
 
-### Project Showcase
-- Filter projects by category
-- Interactive project cards with hover effects
-- Live demo and source code links
-- Detailed project information
-- Tech stack tags
+## Featured Projects
 
-### Responsive Design
-- Mobile-first approach
-- Breakpoint-specific layouts
-- Touch-friendly interactions
-- Optimized images
+### Seller Inbox AI
 
-### Performance
-- Code splitting and lazy loading
-- Image optimization
-- Minimal dependencies
-- Efficient re-renders
+**Status:** Web MVP Live  
+**Live:** https://sellers-inbox-ai.vercel.app/  
+**GitHub:** https://github.com/ujwal-code10/sellers-inbox-AI
 
-## 🔧 Configuration
+AI reply assistant for Nepali Instagram and WhatsApp sellers. Sellers paste customer messages and generate safer replies using their own product data, variants, delivery zones, and AI.
 
-### Environment Variables
-Create a `.env` file in the root directory:
-```env
-VITE_APP_TITLE=Ujwal's Portfolio
-VITE_CONTACT_EMAIL=your-email@example.com
+### Velora
+
+**Status:** Active Development
+
+Flutter tutor booking marketplace with student/tutor roles, availability, booking requests, Stripe manual capture payments, reviews, earnings, notifications backend, and role-scoped APIs.
+
+## Local Development
+
+```bash
+npm install
+npm run dev
 ```
 
-### Tailwind Configuration
-Customize the theme in `tailwind.config.js`:
-```js
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        primary: {...},
-        secondary: {...}
-      }
-    }
-  }
-}
+Build:
+
+```bash
+npm run build
 ```
-
-## 📱 Mobile Responsiveness
-
-The website is fully responsive with breakpoints at:
-- **sm**: 640px
-- **md**: 768px
-- **lg**: 1024px
-- **xl**: 1280px
-- **2xl**: 1536px
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Contact
-
-Ujwal -(https://www.linkedin.com/in/ujwalmagar)
-
-Project Link: (https://ujwal-portfolio-7d7v.vercel.app/)
-
-## 🙏 Acknowledgments
-
-- [React Documentation](https://react.dev)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Framer Motion](https://www.framer.com/motion)
-- [Heroicons](https://heroicons.com)
-- [Unsplash](https://unsplash.com) for images

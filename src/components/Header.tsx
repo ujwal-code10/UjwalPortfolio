@@ -1,150 +1,159 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import ThemeToggle from './ui/ThemeToggle';
+import { Menu, X } from 'lucide-react';
+import { profile } from '../data/profile';
+import ThemeToggle from './ThemeToggle';
+
+const navItems = [
+  { name: 'About', path: '/about' },
+  { name: 'Portfolio', path: '/projects' },
+  { name: 'Contact', path: '/contact' },
+];
 
 const Header = () => {
   const location = useLocation();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
-  const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'Contact', path: '/contact' },
-  ];
-
+  // Close on route change
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Close mobile menu when route changes
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
+    setMobileOpen(false);
   }, [location.pathname]);
 
+  // Close on outside click
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const handleClick = (e: MouseEvent) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(e.target as Node) &&
+        toggleRef.current &&
+        !toggleRef.current.contains(e.target as Node)
+      ) {
+        setMobileOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, [mobileOpen]);
+
+  // Close on Escape
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setMobileOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [mobileOpen]);
+
   return (
-    <>
-      <motion.header
-        className={`sticky top-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-lg' 
-            : 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm'
-        } border-b border-slate-200 dark:border-slate-700`}
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link 
-              to="/" 
-              className="font-bold text-xl text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded"
-              aria-label="Ujwal - Home"
-            >
-              Ujwal
-            </Link>
-            
-            <nav className="hidden md:flex space-x-8" role="navigation" aria-label="Main navigation">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`text-sm font-medium transition-all duration-200 hover:text-indigo-600 dark:hover:text-indigo-400 relative focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded px-2 py-1 ${
-                    location.pathname === item.path
-                      ? 'text-indigo-600 dark:text-indigo-400'
-                      : 'text-slate-600 dark:text-slate-300'
-                  }`}
-                  aria-current={location.pathname === item.path ? 'page' : undefined}
-                >
-                  {item.name}
-                  {location.pathname === item.path && (
-                    <motion.div
-                      layoutId="activeTab"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-indigo-600 dark:bg-indigo-400"
-                      initial={false}
-                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                    />
-                  )}
-                </Link>
-              ))}
-            </nav>
+    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--bg-soft)]/90 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-[1120px] items-center justify-between px-4 md:px-8">
+        {/* Logo */}
+        <Link
+          to="/"
+          className="text-[20px] font-semibold tracking-[-0.02em] text-[var(--text)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:rounded-sm"
+        >
+          {profile.name}
+        </Link>
 
-            <div className="flex items-center space-x-4">
-              <ThemeToggle />
-              
-              {/* Mobile menu button */}
-              <button 
-                className="md:hidden text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded p-1"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                aria-expanded={isMobileMenuOpen}
-                aria-label="Toggle mobile menu"
+        {/* Desktop nav */}
+        <nav className="hidden items-center gap-6 md:flex" aria-label="Main navigation">
+          {navItems.map((item) => {
+            const isActive = location.pathname === item.path;
+            return (
+              <Link
+                key={item.name}
+                to={item.path}
+                aria-current={isActive ? 'page' : undefined}
+                className={`text-[13px] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:rounded-sm ${
+                  isActive
+                    ? 'border-b border-[var(--text)]/50 pb-1 text-[var(--text)]'
+                    : 'text-[var(--muted)] hover:text-[var(--text)]'
+                }`}
               >
-                <svg 
-                  className="w-6 h-6" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  {isMobileMenuOpen ? (
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  ) : (
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  )}
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </motion.header>
+                {item.name}
+              </Link>
+            );
+          })}
+        </nav>
 
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden fixed inset-x-0 top-16 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-lg border-b border-slate-200 dark:border-slate-700"
+        {/* Desktop right controls */}
+        <div className="hidden items-center gap-2 md:flex">
+          <a
+            href={profile.links.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-sm border border-[var(--border-strong)] px-4 py-2 text-[12px] font-medium text-[var(--text)] transition hover:bg-[var(--surface-strong)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
           >
-            <nav className="max-w-6xl mx-auto px-4 py-4" role="navigation" aria-label="Mobile navigation">
-              {navItems.map((item) => (
+            GitHub
+          </a>
+          <ThemeToggle />
+        </div>
+
+        {/* Mobile right controls */}
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <button
+            ref={toggleRef}
+            type="button"
+            aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
+            onClick={() => setMobileOpen((prev) => !prev)}
+            className="inline-flex items-center justify-center rounded-sm border border-[var(--border-strong)] bg-[var(--surface)] p-2 text-[var(--text)] transition hover:bg-[var(--surface-strong)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+          >
+            {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile menu dropdown */}
+      {mobileOpen && (
+        <div
+          id="mobile-menu"
+          ref={menuRef}
+          role="dialog"
+          aria-label="Mobile navigation"
+          className="border-t border-[var(--border)] bg-[var(--bg-soft)] px-4 pb-4 pt-2 md:hidden"
+        >
+          <nav className="flex flex-col gap-1" aria-label="Mobile navigation links">
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.path;
+              return (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`block py-3 px-4 text-base font-medium rounded-lg transition-colors ${
-                    location.pathname === item.path
-                      ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400'
-                      : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800'
+                  aria-current={isActive ? 'page' : undefined}
+                  onClick={() => setMobileOpen(false)}
+                  className={`rounded-sm px-3 py-2.5 text-[14px] font-medium transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] ${
+                    isActive
+                      ? 'bg-[var(--surface-elevated)] text-[var(--text)]'
+                      : 'text-[var(--muted)] hover:bg-[var(--surface)] hover:text-[var(--text)]'
                   }`}
-                  aria-current={location.pathname === item.path ? 'page' : undefined}
                 >
                   {item.name}
                 </Link>
-              ))}
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+              );
+            })}
+            <a
+              href={profile.links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="rounded-sm px-3 py-2.5 text-[14px] font-medium text-[var(--muted)] transition hover:bg-[var(--surface)] hover:text-[var(--text)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+            >
+              GitHub ↗
+            </a>
+          </nav>
+        </div>
+      )}
+    </header>
   );
 };
 
