@@ -45,10 +45,12 @@ const About = () => {
               the seller&apos;s actual catalog before generating anything.
             </p>
             <p>
-              Velora came from the opposite direction: the backend problem first. A tutor
-              marketplace without a proper booking state machine is just a scheduling app. When
-              money moves at booking and transfers at session completion, the state transitions
-              have to be correct. That&apos;s what I&apos;m building.
+              Velora came from a concrete backend problem. IELTS and PTE students in Nepal
+              book practice sessions over WhatsApp — no confirmation, no payment protection,
+              no dispute resolution. A booking table isn&apos;t enough when money moves between
+              parties. I needed a state machine, a Stripe manual capture flow, role-scoped
+              APIs, a job queue, and a separate admin layer for verification and payouts.
+              That&apos;s what I&apos;m building.
             </p>
           </div>
         </section>

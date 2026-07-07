@@ -5,7 +5,7 @@ export const profile = {
   tagline: 'Seller Inbox AI is live. Velora is in development.',
   headline: 'I shipped an AI reply tool for Nepali sellers.\nVelora is next.',
   summary:
-    'Seller Inbox AI lets sellers generate replies grounded in their own product catalog, not generic AI guesses. Velora handles tutor bookings, payment holds, session completion, and earnings — the backend a marketplace actually needs.',
+    'Seller Inbox AI lets sellers generate replies grounded in their own product catalog, not generic AI guesses. Velora is an IELTS/PTE session booking marketplace for Nepal — booking state machine, Stripe manual capture, tutor verification, payout tracking, and a React admin panel. The backend a three-party marketplace actually needs.',
   email: 'magarujwal16@gmail.com',
   location: 'Nepal',
   links: {
@@ -23,7 +23,7 @@ export const techGroups = [
   },
   {
     title: 'Backend',
-    items: ['Node.js', 'Express', 'REST APIs', 'JWT Auth'],
+    items: ['Node.js', 'Express', 'REST APIs', 'Cookie Auth / CSRF', 'JWT Auth'],
   },
   {
     title: 'Database',
@@ -31,14 +31,18 @@ export const techGroups = [
   },
   {
     title: 'Mobile',
-    items: ['Flutter', 'Dart', 'Dio'],
+    items: ['Flutter', 'Dart', 'Dio', 'GoRouter', 'FlutterSecureStorage', 'Bloc/Cubit'],
   },
   {
     title: 'Payments & Jobs',
     items: ['Stripe', 'Webhooks', 'Redis', 'BullMQ'],
   },
   {
-    title: 'AI & Deployment',
-    items: ['Groq AI', 'Vercel', 'Postman', 'GitHub'],
+    title: 'Storage & Cloud',
+    items: ['Cloudinary', 'Vercel'],
+  },
+  {
+    title: 'Tooling & AI',
+    items: ['Groq AI', 'Postman', 'GitHub'],
   },
 ];

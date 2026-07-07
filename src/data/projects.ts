@@ -61,29 +61,48 @@ export const projects: Project[] = [
     title: 'Velora',
     status: 'Active Development',
     statusTone: 'active',
-    tagline: 'A tutor marketplace where the booking, payment, and notification systems are the product.',
+    tagline: 'An IELTS/PTE session booking marketplace for Nepal — booking state machine, Stripe manual capture, and a React admin panel.',
     description:
-      'Tutors and students currently arrange sessions over WhatsApp. No booking confirmation, no payment protection, no record. Velora is building that infrastructure: slot availability, booking states, Stripe payment holds that only capture after a session completes, and a job queue for notifications and cleanup.',
-    tech: ['Flutter', 'Node.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Stripe', 'Redis', 'BullMQ'],
+      'Students preparing for IELTS and PTE in Nepal have no reliable way to book and pay for one-to-one practice sessions. Velora builds that infrastructure: verified tutor discovery, service-type selection (IELTS Speaking Mock, PTE Writing Review), slot booking, Stripe payment holds that capture only after session completion, tutor payout tracking, and a full admin panel for verification and oversight.',
+    tech: [
+      'Node.js',
+      'Express',
+      'TypeScript',
+      'Prisma',
+      'PostgreSQL',
+      'Redis',
+      'BullMQ',
+      'Stripe',
+      'Cloudinary',
+      'Flutter',
+      'Dart',
+      'GoRouter',
+      'React',
+      'Tailwind',
+    ],
     proof: [
       {
         title: 'Booking State Machine',
-        detail: 'Bookings move through PENDING, CONFIRMED, IN_PROGRESS, COMPLETED, and CANCELLED with server-enforced transitions.',
+        detail:
+          'PENDING → CONFIRMED → IN_PROGRESS → COMPLETED → CANCELLED, with server-enforced transitions and slot locking to prevent double-booking.',
       },
       {
         title: 'Stripe Manual Capture',
-        detail: 'Payment is authorized at booking and captured only when the session completes. Cancellations release the hold.',
+        detail:
+          'Payment is authorized at booking and captured only when the session reaches COMPLETED. Cancellations release the hold with no charge.',
       },
       {
-        title: 'Background Jobs',
-        detail: 'BullMQ and Redis handle reminders, capture scheduling, and cleanup of expired booking holds.',
+        title: 'BullMQ Job Queue',
+        detail:
+          'Background jobs handle booking expiry, session reminders, post-session capture triggering, and payout queue processing.',
       },
       {
-        title: 'Role-Scoped APIs',
-        detail: 'Every endpoint is gated by role middleware. Tutors, students, and admins only reach routes they own.',
+        title: 'Three-Party Access Control',
+        detail:
+          'Students, tutors, and admins each reach only their own routes — enforced at the middleware layer, not just the frontend. Admin routes use cookie auth + CSRF.',
       },
     ],
     honestNote:
-      'Backend is running. Flutter integration, notification UI, and final polish are still in progress.',
+      'Core booking, payment, and admin APIs are implemented and testable. Flutter Payment Sheet, email notifications, and production deployment are planned. No real users or revenue — this is a portfolio project demonstrating full-stack marketplace architecture.',
   },
 ];
