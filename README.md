@@ -1,49 +1,82 @@
-# Ujwal Magar — Full-Stack Web & Mobile Developer Portfolio
+# Ujwal Magar — Developer Portfolio
 
-A focused portfolio for my current full-stack direction: SaaS apps, marketplace workflows, backend APIs, databases, authentication, payments, AI features, and Flutter integration.
+This is my personal portfolio website showcasing my full-stack, mobile, and AI-related projects. It highlights systems where backend behavior, API contracts, and correct data flows matter just as much as the UI.
 
-## Current Structure
+## Portfolio Tech Stack
+This portfolio site itself is built using:
+- **React** (v18)
+- **TypeScript**
+- **Tailwind CSS** (with Radix UI components)
+- **Vite**
+- **React Router DOM**
+- **Framer Motion**
 
-- `/` — clean homepage / positioning
-- `/projects` — engineering portfolio and project proof
-- `/about` — direction and technical foundation
-- `/contact` — contact form and links
-
-## Screenshot Setup
-
-Add the Seller Inbox AI screenshot here:
-
-```txt
-public/projects/seller-inbox-reply.png
-```
-
-The projects page will show that image inside a browser-style frame. If the file is missing, it shows a fallback message.
+---
 
 ## Featured Projects
 
-### Seller Inbox AI
+### 1. Seller Inbox AI
+A live AI reply tool for Nepali Instagram and WhatsApp sellers that generates replies grounded in actual product context instead of generic AI guesses.
 
-**Status:** Web MVP Live  
-**Live:** https://sellers-inbox-ai.vercel.app/  
-**GitHub:** https://github.com/ujwal-code10/sellers-inbox-AI
+- **Problem solved:** Sellers handle dozens of messages daily. Generic AI often gives incorrect prices or lists out-of-stock items. This system fetches the seller's actual catalog, variants, and delivery zones from a database before generating any reply.
+- **Key features:** Grounded AI replies, full product catalog management, delivery zone configuration, account-level API usage limits, and a deliberate manual QR payment tradeoff for the MVP.
+- **Tech stack:** React, TypeScript, Node.js, Express, PostgreSQL, Groq AI, Vercel
+- **Status:** Web MVP Live
+- **Live link:** [https://sellers-inbox-ai.vercel.app/](https://sellers-inbox-ai.vercel.app/)
+- **GitHub:** [https://github.com/ujwal-code10/sellers-inbox-AI](https://github.com/ujwal-code10/sellers-inbox-AI)
 
-AI reply assistant for Nepali Instagram and WhatsApp sellers. Sellers paste customer messages and generate safer replies using their own product data, variants, delivery zones, and AI.
+### 2. Velora
+An IELTS/PTE-focused one-to-one session booking marketplace for Nepal.
 
-### Velora
+- **Problem solved:** Students preparing for IELTS and PTE currently book practice sessions over WhatsApp with no payment protection, no confirmation, and no dispute resolution. Velora builds a real marketplace infrastructure with secure payment holds and a reliable booking state machine.
+- **Key features by role:**
+  - **Student:** Discover verified tutors, select service types (e.g., IELTS Speaking Mock, PTE Writing Review), book time slots, and securely pay.
+  - **Tutor:** Manage availability slots, handle booking requests, conduct sessions, and track earnings/payouts.
+  - **Admin:** Oversee users, verify tutors, configure service types, moderate reviews, handle payouts, and view audit logs.
+- **Engineering highlights:**
+  - **Booking state machine:** Server-enforced transitions (PENDING → CONFIRMED → IN_PROGRESS → COMPLETED → CANCELLED) with slot locking.
+  - **Payment flow:** Stripe manual capture (payment authorized at booking, captured only on session completion, released on cancellation).
+  - **Three-party access control:** Students, tutors, and admins only reach their own routes at the Express middleware layer.
+  - **Admin panel security:** React admin dashboard protected by cookie-based session auth and CSRF protection.
+  - **Background jobs:** Redis and BullMQ for booking expiry, session reminders, capture scheduling, and payout queues.
+  - **Data modeling:** Prisma and PostgreSQL schema handling polymorphic users, bookings, payments, and audit logs.
+- **Tech stack:** Node.js, Express, TypeScript, Prisma, PostgreSQL, Redis, BullMQ, Stripe, Cloudinary, Flutter, Dart, GoRouter, React, Tailwind
+- **Status:** Active Development / Portfolio Project. (Backend API and admin panel implemented. Mobile client and integrations in progress. No real users or revenue).
 
-**Status:** Active Development
+---
 
-Flutter tutor booking marketplace with student/tutor roles, availability, booking requests, Stripe manual capture payments, reviews, earnings, notifications backend, and role-scoped APIs.
+## What this portfolio demonstrates
+- **Full-stack project architecture:** Designing three-party systems across different frontends (web and mobile).
+- **Backend API design:** Role-scoped Express middleware, RESTful patterns, and background job processing.
+- **Database design:** Relational modeling using Prisma and PostgreSQL.
+- **Admin dashboard development:** Secure React applications with proper cookie authentication.
+- **Practical product thinking:** Focusing on specific domains (Nepali sellers, IELTS/PTE market) and solving actual infrastructure problems (state machines, manual capture payments) rather than just building UI clones.
+- **Honest project documentation:** Clearly separating live features from planned features without overclaiming traction.
 
-## Local Development
+---
+
+## Local Setup
+
+To run this portfolio locally:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Build:
+To create a production build:
 
 ```bash
 npm run build
 ```
+
+---
+
+## Links
+- **Portfolio Live URL:** *[Add URL if deployed]*
+- **GitHub Profile:** [https://github.com/ujwal-code10](https://github.com/ujwal-code10)
+- **LinkedIn:** [https://www.linkedin.com/in/ujwalmagar/](https://www.linkedin.com/in/ujwalmagar/)
+- **Email:** magarujwal16@gmail.com
+
+---
+*Note: Some projects listed here (like Velora) are portfolio projects in active development. No fake metrics, production traffic, or inflated revenue numbers are claimed.*
