@@ -26,16 +26,15 @@ A live AI reply tool for Nepali Instagram and WhatsApp sellers that generates re
 - **GitHub:** [https://github.com/ujwal-code10/sellers-inbox-AI](https://github.com/ujwal-code10/sellers-inbox-AI)
 
 ### 2. Velora
-An IELTS/PTE-focused one-to-one session booking marketplace for Nepal.
-
-- **Problem solved:** Students preparing for IELTS and PTE currently book practice sessions over WhatsApp with no payment protection, no confirmation, and no dispute resolution. Velora builds a real marketplace infrastructure with secure payment holds and a reliable booking state machine.
+- **Goal:** Built as a full-stack learning project to understand production-style systems.
+- **Problem solved:** Many IELTS and PTE students need daily practice with immediate feedback, which is hard to get. Velora solves this with an AI-guided practice loop for speaking/writing, while still maintaining an optional verified mentor marketplace with a robust booking state machine and pilot manual payments.
 - **Key features by role:**
-  - **Student:** Discover verified tutors, select service types (e.g., IELTS Speaking Mock, PTE Writing Review), book time slots, and securely pay.
-  - **Tutor:** Manage availability slots, handle booking requests, conduct sessions, and track earnings/payouts.
-  - **Admin:** Oversee users, verify tutors, configure service types, moderate reviews, handle payouts, and view audit logs.
+  - **Student:** Practice speaking and writing with AI, view feedback summaries, complete daily missions, optionally discover verified tutors, book time slots, and upload manual payment proofs.
+  - **Tutor:** Manage availability slots, handle booking requests, and track earnings/payouts.
+  - **Admin:** Verify tutors, verify payment proofs manually, handle session disputes, and moderate reviews.
 - **Engineering highlights:**
   - **Booking state machine:** Server-enforced transitions (PENDING → CONFIRMED → IN_PROGRESS → COMPLETED → CANCELLED) with slot locking.
-  - **Payment flow:** Stripe manual capture (payment authorized at booking, captured only on session completion, released on cancellation).
+  - **Payment flow:** Manual payment verification and ledger tracking.
   - **Three-party access control:** Students, tutors, and admins only reach their own routes at the Express middleware layer.
   - **Admin panel security:** React admin dashboard protected by cookie-based session auth and CSRF protection.
   - **Background jobs:** Redis and BullMQ for booking expiry, session reminders, capture scheduling, and payout queues.

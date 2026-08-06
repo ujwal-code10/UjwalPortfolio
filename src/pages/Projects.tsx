@@ -305,8 +305,8 @@ const Projects = () => {
 
   return (
     <PageWrapper
-      title="Projects"
-      description="Seller Inbox AI — live AI reply tool for Nepali sellers. Velora — IELTS/PTE session booking marketplace with booking state machine, Stripe manual capture, BullMQ job queue, and a React admin panel."
+      title="Projects | Ujwal Magar"
+      description="Seller Inbox AI — live AI reply tool for Nepali sellers. Velora — AI IELTS/PTE practice and mentor booking platform with a booking state machine, manual pilot payments, and a React admin panel."
     >
       <main className="mx-auto w-full max-w-[1120px] px-4 md:px-8">
         {/* Header */}

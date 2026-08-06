@@ -61,40 +61,34 @@ export const projects: Project[] = [
     title: 'Velora',
     status: 'Active Development',
     statusTone: 'active',
-    tagline: 'An IELTS/PTE session booking marketplace for Nepal — booking state machine, Stripe manual capture, and a React admin panel.',
+    tagline: 'AI IELTS/PTE Practice & Mentor Booking Platform',
     description:
-      'Students preparing for IELTS and PTE in Nepal have no reliable way to book and pay for one-to-one practice sessions. Velora builds that infrastructure: verified tutor discovery, service-type selection (IELTS Speaking Mock, PTE Writing Review), slot booking, Stripe payment holds that capture only after session completion, tutor payout tracking, and a full admin panel for verification and oversight.',
+      'Many IELTS and PTE students need regular speaking/writing practice and feedback, but one-to-one correction is expensive or hard to access. Velora solves this by providing AI-guided daily practice, structured feedback, and progress insights, while keeping a verified mentor marketplace optional for deeper human support.\n\nAs a solo full-stack project, Velora implements a production-style architecture including an AI practice loop, photo-to-text writing extraction, verified tutor discovery, manual payment proof verification, and administrative oversight. The platform ensures reliable state management across bookings, AI rate limits, and secure backend workflows.',
     tech: [
+      'Flutter',
       'Node.js',
-      'Express',
       'TypeScript',
       'Prisma',
       'PostgreSQL',
-      'Redis',
-      'BullMQ',
-      'Stripe',
-      'Cloudinary',
-      'Flutter',
-      'Dart',
-      'GoRouter',
-      'React',
-      'Tailwind',
+      'Redis/BullMQ',
+      'Gemini AI',
+      'Cloudinary'
     ],
     proof: [
       {
+        title: 'AI Practice Loop',
+        detail:
+          'Daily missions, speaking/writing prompts, Gemini integration for feedback, and photo-to-text extraction for written essays.',
+      },
+      {
         title: 'Booking State Machine',
         detail:
-          'PENDING → CONFIRMED → IN_PROGRESS → COMPLETED → CANCELLED, with server-enforced transitions and slot locking to prevent double-booking.',
+          'Server-enforced booking transitions, rate limits, slot locking, and robust administrative workflows.',
       },
       {
-        title: 'Stripe Manual Capture',
+        title: 'Pilot-Ready Payments',
         detail:
-          'Payment is authorized at booking and captured only when the session reaches COMPLETED. Cancellations release the hold with no charge.',
-      },
-      {
-        title: 'BullMQ Job Queue',
-        detail:
-          'Background jobs handle booking expiry, session reminders, post-session capture triggering, and payout queue processing.',
+          'Manual payment proof upload flow and admin verification to safely handle initial Nepal pilot tests without complex gateway setups.',
       },
       {
         title: 'Three-Party Access Control',

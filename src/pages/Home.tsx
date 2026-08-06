@@ -16,8 +16,8 @@ const workItems = [
 const Home = () => {
   return (
     <PageWrapper
-      title="Home"
-      description="Ujwal Magar built Seller Inbox AI, a live AI reply tool for Nepali Instagram sellers, and is building Velora, an IELTS/PTE session booking marketplace for Nepal with a booking state machine, Stripe payment holds, and a React admin panel."
+      title="Ujwal Magar | Software Developer"
+      description="Ujwal Magar built Seller Inbox AI, a live AI reply tool for Nepali Instagram sellers, and is building Velora, an AI-guided IELTS/PTE practice and mentor booking platform for Nepal with an active backend state machine and React admin panel."
     >
       <main className="mx-auto w-full max-w-[1120px] px-4 md:px-8">
 

@@ -6,7 +6,7 @@ const monoStyle = { fontFamily: "'JetBrains Mono', monospace" };
 const About = () => {
   return (
     <PageWrapper
-      title="About"
+      title="About | Ujwal Magar"
       description="Ujwal Magar is a full-stack engineer based in Nepal building Seller Inbox AI and Velora. Focused on product systems where the backend behavior matters as much as the UI."
     >
       <main className="mx-auto w-full max-w-[1120px] px-4 md:px-8">
@@ -45,12 +45,12 @@ const About = () => {
               the seller&apos;s actual catalog before generating anything.
             </p>
             <p>
-              Velora came from a concrete backend problem. IELTS and PTE students in Nepal
-              book practice sessions over WhatsApp — no confirmation, no payment protection,
-              no dispute resolution. A booking table isn&apos;t enough when money moves between
-              parties. I needed a state machine, a Stripe manual capture flow, role-scoped
-              APIs, a job queue, and a separate admin layer for verification and payouts.
-              That&apos;s what I&apos;m building.
+              Velora came from a concrete learning problem. IELTS and PTE students in Nepal
+              need daily practice with feedback, but humans are expensive. I built Velora
+              to provide AI-guided speaking and writing practice alongside an optional human 
+              mentor marketplace. Building this required an AI feedback loop, rate limiting, 
+              a booking state machine, manual pilot payments, role-scoped APIs, and a 
+              separate admin layer for verification. That&apos;s what I&apos;m building.
             </p>
           </div>
         </section>

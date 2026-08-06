@@ -5,7 +5,7 @@ export const profile = {
   tagline: 'Seller Inbox AI is live. Velora is in development.',
   headline: 'I shipped an AI reply tool for Nepali sellers.\nVelora is next.',
   summary:
-    'Seller Inbox AI lets sellers generate replies grounded in their own product catalog, not generic AI guesses. Velora is an IELTS/PTE session booking marketplace for Nepal — booking state machine, Stripe manual capture, tutor verification, payout tracking, and a React admin panel. The backend a three-party marketplace actually needs.',
+    'Seller Inbox AI lets sellers generate replies grounded in their own product catalog, not generic AI guesses. Velora is an AI-guided IELTS/PTE practice platform for Nepal combined with an optional mentor booking marketplace — featuring an AI feedback loop, booking state machine, manual pilot payments, and a React admin panel. The backend a real learning platform actually needs.',
   email: 'magarujwal16@gmail.com',
   location: 'Nepal',
   links: {
