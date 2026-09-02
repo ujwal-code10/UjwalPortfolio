@@ -23,7 +23,7 @@ A live AI reply tool for Nepali Instagram and WhatsApp sellers that generates re
 - **Tech stack:** React, TypeScript, Node.js, Express, PostgreSQL, Groq AI, Vercel
 - **Status:** Web MVP Live
 - **Live link:** [https://sellers-inbox-ai.vercel.app/](https://sellers-inbox-ai.vercel.app/)
-- **GitHub:** [https://github.com/ujwal-code10/sellers-inbox-AI](https://github.com/ujwal-code10/sellers-inbox-AI)
+- **GitHub:** [https://github.com/ujwalmagar/sellers-inbox-AI](https://github.com/ujwalmagar/sellers-inbox-AI)
 
 ### 2. Velora
 - **Goal:** Built as a full-stack learning project to understand production-style systems.
@@ -73,7 +73,7 @@ npm run build
 
 ## Links
 - **Portfolio Live URL:** *[Add URL if deployed]*
-- **GitHub Profile:** [https://github.com/ujwal-code10](https://github.com/ujwal-code10)
+- **GitHub Profile:** [https://github.com/ujwalmagar](https://github.com/ujwalmagar)
 - **LinkedIn:** [https://www.linkedin.com/in/ujwalmagar/](https://www.linkedin.com/in/ujwalmagar/)
 - **Email:** magarujwal16@gmail.com
 

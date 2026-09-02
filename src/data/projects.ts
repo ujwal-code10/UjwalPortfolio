@@ -51,7 +51,7 @@ export const projects: Project[] = [
     honestNote:
       'No WhatsApp or Instagram API integration in the current MVP. Auto-send, eSewa, Khalti, and Flutter are not part of this version.',
     liveUrl: 'https://sellers-inbox-ai.vercel.app/',
-    githubUrl: 'https://github.com/ujwal-code10/sellers-inbox-AI',
+    githubUrl: 'https://github.com/ujwalmagar/sellers-inbox-AI',
     screenshotSrc: '/projects/seller-inbox-reply.png',
     screenshotAlt: 'Seller Inbox AI — reply generation screen',
     browserUrl: 'sellers-inbox-ai.vercel.app',

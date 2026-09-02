@@ -9,10 +9,10 @@ export const profile = {
   email: 'magarujwal16@gmail.com',
   location: 'Nepal',
   links: {
-    github: 'https://github.com/ujwal-code10',
+    github: 'https://github.com/ujwalmagar',
     linkedin: 'https://www.linkedin.com/in/ujwalmagar/',
     sellerInboxLive: 'https://sellers-inbox-ai.vercel.app/',
-    sellerInboxGithub: 'https://github.com/ujwal-code10/sellers-inbox-AI',
+    sellerInboxGithub: 'https://github.com/ujwalmagar/sellers-inbox-AI',
   },
 };
 
